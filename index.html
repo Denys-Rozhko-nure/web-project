@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
@@ -24,8 +25,88 @@
     </header>
 
     <main>
-        fdsfd
-        <section></section>
+        <section class="settings">
+            <div class="container">
+                <div class="settings-enabled">
+                    <label for="font-size"><h2>Размер шрифта</h2></label>
+                    <div class="slider-group">
+                        <div class="number">8</div>
+                        <input 
+                            type="range" 
+                            id="font-size" 
+                            name="font-size" 
+                            min="8" 
+                            max="30" 
+                            value="18" 
+                            step="2"
+                        >
+                        <div class="number">30</div>
+                    </div>
+                </div>
+                <div class="settings-disabled">
+                    <form action="" autocomplete="off">
+                        <p>Найстройки доступны только авторизированым пользователям. Ввойдите чтобы имень возможность менять настройки.</p>
+                        
+                        <div class="combine-label-with-input">
+                            <label for="name">Ваше имя: </label>
+                            <input type="text" required placeholder="Денис">
+                        </div>
+
+                        <div class="combine-label-with-input">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" required autocomplete="on" placeholder="denys.rozhko@nure.ua">
+                        </div>
+                        
+                        <div class="second-line">
+                            <div class="combine-label-with-input">
+                                <label for="sex">Ваш пол:</label>
+                                <select name="sex" required>
+                                    <option disabled selected>Выберите пол</option>
+                                    <option value="male">Мужской</option>
+                                    <option value="female">Женский</option>
+                                    <option value="other">Другой</option>
+                                </select>
+                            </div>
+
+                            <div class="combine-label-with-input">
+                                <label for="tel">Введите свой номер телефона:</label>
+                                <input type="tel" name="tel" id="tel" placeholder="+380xxxxxxxxx" pattern="+380[0-9]{9}" >
+                            </div>
+
+                            <div class="combine-label-with-input">
+                                <label for="date">Дата поступления:</label>
+                                <input type="date" name="date" id="date" value="2019-09-01" min="2019-09-01" max="2019-12-31">
+                            </div>
+                        </div>
+
+                        <label for="desctioption">Опишите свою жизнь в университете:</label>
+                        <textarea name="desctioption" id="desctioption" rows="3" required></textarea>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" name="agreed" id="agreed" required>
+                            <label for="agreed">Я согласен на обработку моих персональных данных</label>
+                        </div>
+
+                        <button type="submit">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="first-section">
+            <div class="container">
+                <h2>Lorem ipsum dolor sit.</h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Possimus eveniet optio aliquam consequuntur amet.</li>
+                    <li>Expedita eius reiciendis cupiditate! Optio, illo?</li>
+                    <li>Praesentium rem iusto rerum tempora soluta.</li>
+                    <li>Reprehenderit corrupti temporibus quidem adipisci exercitationem?</li>
+                    <li>Quia architecto harum repellendus laudantium vitae!</li>
+                    <li>Maiores molestiae optio assumenda tenetur nihil?</li>
+                </ul>
+            </div>
+        </section>
         <section></section>
         <section></section>
     </main>
@@ -33,5 +114,6 @@
     <footer>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -9,13 +9,11 @@
     background: rgb(255, 145, 0) !important;
     }
 }
+@main-font: #d3cec8;
+@dark-font: #2C3137;
 
 html {
     font-size: 18px;    
-}
-
-a {
-    text-decoration: none;
 }
 
 @header-background: #271a0c;
@@ -27,6 +25,19 @@ a {
     margin: 0 auto;
 }
 
+h2 {
+    font-size: 2.7rem;
+    padding: 20px;
+}
+
+p {
+    font-size: 1rem;
+    padding: 13px;
+    line-height: 1.5em;
+    text-indent: 3em;
+    text-align: justify;
+}
+
 header{
     background-color: @header-background;
     .wrap {
@@ -36,7 +47,7 @@ header{
         align-items: center;
 
         img {
-            max-width: 100px;
+            max-height: 1.1rem;
         }
 
         nav {
@@ -46,9 +57,11 @@ header{
             align-items: center;
 
             a {
-                margin: 30px;
+                text-decoration: none;
+
+                margin-left: 30px;
                 font-size: 1.1rem;
-                padding: 15px;
+                padding: 10px;
                 transition: background-color 0.7s ease;
                 border-radius: 1.5em;
 
@@ -58,4 +71,166 @@ header{
             }
         }
     }
+}
+
+.settings {
+    color: @dark-font;
+
+    .settings-enabled {
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+
+        .slider-group {
+            color: @dark-font;
+            display: flex;
+            
+            input[type="range"] {
+                width: 100%;
+            }
+
+            .number {
+                color: @dark-font;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        label h2{
+            color: @dark-font;
+        }
+    }
+
+    .settings-disabled {
+
+        form {
+            color: @dark-font;
+            max-width: 600px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-gap: 15px;
+
+            input:focus, select:focus, textarea:focus {
+                box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.6);
+            }
+
+            input:hover, select:hover, textarea:hover {
+                box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.4);
+            }
+
+            .combine-label-with-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            p, button, .checkbox-wrapper, .second-line{
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            .second-line {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            * {
+                color: @dark-font;
+                font-size: 1rem;
+            }
+
+            textarea {
+                resize: vertical;
+            }
+
+            input[type="checkbox"] {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+
+            input[type="checkbox"]+label {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            input[type="checkbox"]+label::before, input[type="checkbox"]:not(:checked)+label::before  {
+                content: '';
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                border: 1px solid #adb5bd;
+                border-radius: 0.25em;
+                margin-right: 0.5em;    
+            }
+
+            input[type="checkbox"]:hover+label::before {
+                &:extend(input[type="checkbox"]+label::before);
+                border-color: lighten(@dark-font, 10%);
+            }
+
+            input[type="checkbox"]:focus+label::before {
+                &:extend(input[type="checkbox"]+label::before);
+                border-color: @dark-font;
+            }
+
+            input[type="checkbox"]:active+label::before {
+                &:extend(input[type="checkbox"]+label::before);
+                border-color: #000;
+            }
+
+            input[type="checkbox"]:checked+label::before {
+                &:extend(input[type="checkbox"]+label::before);
+                background-image: url("img/checkbox_icon.png");
+                background-size: cover;
+            }
+
+            button {
+                width: 100px;
+                padding: 10px;
+                margin: 0 auto;
+                background-color: @header-background;
+                border: none;
+                border-radius: 10px;
+                color: @main-font;
+
+                &:focus {
+                    background-color: lighten(@header-background, 40%); 
+                }
+
+                &:hover {
+                    background-color: lighten(@header-background, 20%);
+                }
+            }
+        }
+    }
+}
+
+.first-section {
+    background-image: url("img/sec1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: calc(100vh - 1.1rem - 30px); /*100vh - header height*/
+
+    h2 {
+        margin-top: 100px;
+    }
+
+    ul li {
+        list-style: none;
+        min-width: 500px;
+
+        &::before {
+            content: url("img/heart_icon.png");
+            margin-right: 10px;
+        }
+    }
+}
+
+main {
+    height: 2000px;
 }
