@@ -1,3 +1,5 @@
 style.css
 *.docx
 unnamed.jpg
+node_modules
+dist
