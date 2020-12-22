@@ -108,13 +108,26 @@
         </section>
 
         <section class="second-section">
-            <picture id="picture">
-                <source srcset="" media="(min-width: 1200px)">
-                <source srcset="" media="(min-width: 500px)">
-                <source srcset="" media="(min-width: 0px)">
+            <div class="picture-container">
+                <picture id="current-picture">
+                    <source srcset="" media="(max-width: 200px)">
+                    <source srcset="" media="(max-width: 500px)">
+                    <source srcset="" media="(max-width: 1200px) and (min-resolution: 144dpi)">
+                    <source srcset="" media="(max-width: 1200px)">
+            
+                    <img src="" alt="image with a coffee">
+                </picture>
 
-                <img src="img/sqr.png" alt="image with a coffee">
-            </picture>
+                <picture id="next-picture">
+                    <source srcset="" media="(max-width: 200px)">
+                    <source srcset="" media="(max-width: 500px)">
+                    <source srcset="" media="(max-width: 1200px) and (min-resolution: 144dpi)">
+                    <source srcset="" media="(max-width: 1200px)">
+            
+                    <img src="" alt="image with a coffee">
+                </picture>
+            </div>
+            
             <p class="error-message"></p>
             <div class="controls">
                 <i class="material-icons" id="arrow_back">arrow_back</i>
