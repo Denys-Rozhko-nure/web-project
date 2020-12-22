@@ -144,7 +144,7 @@ const slider = {
             <source srcset="${photo.urls.full}" media="(max-width: 1200px) and (min-resolution: 144dpi)">
             <source srcset="${photo.urls.regular}" media="(max-width: 1200px)">
 
-            <img src="${photo.urls.full}" alt="image with a coffee">
+            <img src="${photo.urls.full}" alt="${photo.desctription}" title="${photo.desctription}">
         `;
     },
     setCurrentImage(photo) {

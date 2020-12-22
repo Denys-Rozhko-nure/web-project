@@ -231,6 +231,14 @@ header{
             content: url("../img/heart_icon.png");
             margin-right: 10px;
         }
+
+        &:not(:last-child)::after {
+            content: ";";
+        }
+
+        &:last-child::after {
+            content: ".";
+        }
     }
 }
 
