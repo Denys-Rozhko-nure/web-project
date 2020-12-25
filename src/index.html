@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
@@ -18,6 +19,7 @@
                     <a href="#section1">Section 1</a>
                     <a href="#section2">Section 2</a>
                     <a href="#section3">Section 3</a>
+                    <a href="#section4">Section 4</a>
                 </nav>
             </div>
         </div>
@@ -43,12 +45,12 @@
                     </div>
                 </div>
                 <div class="settings-disabled">
-                    <form action="" autocomplete="off">
+                    <form id="authorise-form" action="#" method="POST" autocomplete="off">
                         <p>Найстройки доступны только авторизированым пользователям. Ввойдите чтобы имень возможность менять настройки.</p>
                         
                         <div class="combine-label-with-input">
                             <label for="name">Ваше имя: </label>
-                            <input type="text" required placeholder="Денис">
+                            <input type="text" name="name" id="name"required placeholder="Денис">
                         </div>
 
                         <div class="combine-label-with-input">
@@ -69,7 +71,7 @@
 
                             <div class="combine-label-with-input">
                                 <label for="tel">Введите свой номер телефона:</label>
-                                <input type="tel" name="tel" id="tel" placeholder="+380xxxxxxxxx" pattern="+380[0-9]{9}" >
+                                <input type="tel" name="tel" id="tel" placeholder="+380xxxxxxxxx" pattern="^\+380[0-9]{9}$" >
                             </div>
 
                             <div class="combine-label-with-input">
@@ -81,6 +83,9 @@
                         <label for="desctioption">Опишите свою жизнь в университете:</label>
                         <textarea name="desctioption" id="desctioption" rows="3" required></textarea>
 
+                        <label for="password">Пароль:</label>
+                        <input type="password" name="password" id="password" minlength="5">
+
                         <div class="checkbox-wrapper">
                             <input type="checkbox" name="agreed" id="agreed" required>
                             <label for="agreed">Я согласен на обработку моих персональных данных</label>
@@ -88,6 +93,7 @@
 
                         <button type="submit">Войти</button>
                     </form>
+                    <p id="err-text"></p>
                 </div>
             </div>
         </section>
@@ -161,7 +167,7 @@
             </div>
         </section>
 
-        <section class="fourth-section" id="section4">
+        <section id="section4" class="fourth-section" id="section4">
             <div class="container">
                 <video src="../img/video.mp4" class="smooth-appear invisible" autoplay autobuffer controls loop muted>
 
@@ -177,7 +183,21 @@
     </main>
 
     <footer>
-
+        <div class="container">
+            <div class="columns">
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum necessitatibus dicta amet cum dolores repudiandae totam aspernatur maiores eum quisquam.</div>
+                <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt tenetur dicta obcaecati, tempora laboriosam provident animi dignissimos sequi quia libero? Cumque molestias enim corrupti asperiores molestiae maxime id atque blanditiis, eaque nisi eligendi facilis vero impedit cum! Voluptates blanditiis provident deserunt, molestiae vero neque itaque officiis rem?</div>
+                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, praesentium.</div>
+            </div>
+            <div class="social-media">
+                <i class="fa fa-facebook"></i>    
+                <i class="fa fa-github"></i>
+                <i class="fa fa-google"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-odnoklassniki"></i>
+            </div>
+        </div>
     </footer>
 
     <div id="select-fibonacci">

@@ -95,6 +95,9 @@ header{
 
 .settings {
     color: @dark-font;
+    overflow: hidden;
+    min-height: 0;
+    height: 0;
 
     .settings-enabled {
         margin: 20px auto;
@@ -145,7 +148,7 @@ header{
                 justify-content: space-between;
             }
 
-            p, button, .checkbox-wrapper, .second-line{
+            p, button, .checkbox-wrapper, .second-line {
                 grid-column-start: 1;
                 grid-column-end: 3;
             }
@@ -224,6 +227,12 @@ header{
                     background-color: lighten(@header-background, 20%);
                 }
             }
+        }
+
+        
+        #err-text {
+            color: rgb(255, 108, 108);
+            text-align: center;
         }
     }
 }
@@ -354,7 +363,7 @@ header{
              
             ::-webkit-scrollbar-thumb {
                 border-radius: 10px;
-                background-color: fade(lighten(@main-font, 10%), 30%); 
+                background-color: fade(darken(@main-font, 20%), 40%); 
             }
         }
     }
@@ -432,8 +441,41 @@ header{
     }
 }
 
-main {
-    height: 2000px;
+footer {
+    background: @header-background;
+
+    .columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        div {
+            max-width: 25%;
+        }
+    }
+
+    .social-media {
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 300px;
+
+        i {
+            font-size: 1.8rem;
+        }
+    }
+
+    * {
+        opacity: 0.75;
+
+        transition: all 0.3s ease-out;
+
+        *:hover {
+            opacity: 1;
+        }
+    }
 }
 
 #select-fibonacci {
@@ -492,10 +534,24 @@ main {
     animation-duration: 40s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    // animation-delay: 10s;
+    cursor: pointer;
 }
 
 @keyframes bounce{
     0%, 49%, 51%, 100% {transform: translateY(0);}
     50% {transform: translateY(-25px);}
+}
+
+@media print{
+    #settings-image, .settings, .fourth-section {
+        display: none;
+    }
+
+    footer *{
+        opacity: 1;
+    }
+
+    nav a {
+        color: @dark-font;
+    }
 }

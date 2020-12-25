@@ -1,7 +1,14 @@
 onmessage = (e) => {
   const n = BigInt(e.data);
-  if(n == 1) return "<b>1</b>";
-  if(n == 2) return "1 <b>1</b>"
+  if(n == 1) {
+    postMessage("<strong>1</strong>");
+    return;
+  }
+  if(n == 2) {
+    postMessage("1 <strong>1</strong>");
+    return;
+  }
+
   let result = "1 1";
   let a = b = BigInt(1);
 
