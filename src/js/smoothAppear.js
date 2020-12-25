@@ -5,7 +5,5 @@ window.onscroll = () => {
       el.classList.remove("invisible");
       el.classList.remove("smooth-appear");
     }
-
-    console.log(window.pageYOffset);
   }
 }

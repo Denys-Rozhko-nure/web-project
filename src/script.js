@@ -1,6 +1,7 @@
 import "./style.less";
 import "./js/smoothAnchorScroll";
 import "./js/smoothAppear";
+import "./js/modalWindow";
 import slider from "./js/slider";
 
 // slider.init();

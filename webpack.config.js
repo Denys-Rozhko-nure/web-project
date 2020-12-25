@@ -4,9 +4,12 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, "src", "script.js"),
+    entry: {
+        bundle: path.resolve(__dirname, "src", "script.js"),
+        "fibonacci-worker": path.resolve(__dirname, "src", "js", "fibonacci-worker.js")
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].js",
         path: path.join(__dirname, "dist")
     },
     module: {
