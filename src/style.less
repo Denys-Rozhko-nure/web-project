@@ -20,7 +20,9 @@ html {
 @header-background: #271a0c;
 @max-container-width: 1200px;
 
-
+section {
+    min-height: 100vh;
+}
 .container {
     width: 100%;
     padding: 20px;
@@ -39,6 +41,19 @@ p {
     line-height: 1.5em;
     text-indent: 3em;
     text-align: justify;
+}
+
+a {
+    color: rgb(0, 153, 255);
+    text-decoration: none;
+
+    &:hover {
+        color: rgb(107, 44, 255);
+    }
+
+    &[target="_blank"]::after {
+        content: " (click for open in a new tab)"
+    }
 }
 
 header{
@@ -217,7 +232,6 @@ header{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-height: 100vh; /*100vh - header height*/
 
     h2 {
         margin-top: 100px;
@@ -246,7 +260,6 @@ header{
     background-image: url("../img/wallpaper.jpg");
     background-repeat: repeat;
     background-size: 300px 300px;
-    height: 1000px;
     width: 100%;
     padding-top: 30px;
     display: flex;
@@ -311,10 +324,12 @@ header{
 }
 
 .third-section {
+    min-height: 100vh;
     .main-grid {
         display: grid;
         grid-template-columns: 45% 45%;
         gap: 10%;
+        min-height: 100vh;
 
         .block {
             display: flex;
@@ -338,6 +353,73 @@ header{
             ::-webkit-scrollbar-thumb {
                 border-radius: 10px;
                 background-color: fade(lighten(@main-font, 10%), 30%); 
+            }
+        }
+    }
+}
+
+@fourth-section-bg: rgb(225, 241, 251);
+
+.fourth-section {
+    background-color: @fourth-section-bg;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        margin: auto 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 30px;
+
+        video {
+            position: relative;
+
+            grid-column-start: 1;
+            grid-column-end: 1;
+
+            grid-row-start: 1;
+            grid-row-end: 1;
+
+            transition: all ease-out 1s;
+
+            left: 0;
+            opacity: 1;
+
+            &.invisible {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        .fibonacci-block {
+            position: relative;
+
+            grid-column-start: 2;
+            grid-column-end: 2;
+
+            grid-row-start: 2;
+            grid-row-end: 2;
+
+            transition: all ease-out 1s;
+
+            right: 0;
+            opacity: 1;
+
+            &.invisible {
+                right: 100%;
+                opacity: 0;
+            }
+
+            h2 {
+                display: inline-block;
+                color: @dark-font;
+                cursor: pointer;
+            }
+
+            p {
+                background-color: lighten(@fourth-section-bg, 2.5%);
+                height: 200px;
+                overflow: auto;
             }
         }
     }

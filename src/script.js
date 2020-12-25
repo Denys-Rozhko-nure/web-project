@@ -1,5 +1,6 @@
 import "./style.less";
 import "./js/smoothAnchorScroll";
+import "./js/smoothAppear";
 import slider from "./js/slider";
 
 // slider.init();
