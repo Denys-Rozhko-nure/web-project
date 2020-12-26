@@ -8,6 +8,7 @@
         color: white !important;
     background: @orange !important;
     }
+    box-sizing: border-box;
 }
 @orange: rgb(255, 145, 0);
 
@@ -15,8 +16,7 @@
 @dark-font: #2C3137;
 
 html {
-    font-size: 18px;    
-    box-sizing: border-box;
+    font-size: 18px;
 }
 
 @header-background: #271a0c;
@@ -30,6 +30,7 @@ section {
     padding: 20px;
     max-width: @max-container-width;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -59,15 +60,40 @@ a {
 }
 
 header{
+    width: 100vw;
     background-color: @header-background;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+
     .container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
 
         img {
             max-height: 3rem;
+        }
+
+        #menu-button {
+            display: none;
+            font-size: 2rem;
+            color: @main-font;
+            margin-right: 20px;
+            padding: 7px 15px;
+            // padding-left: 10px;
+            // padding-right: 10px;
+            cursor: pointer;
+            transition: all ease-out 1s;
+
+            &:hover {
+                background-color: #442a1d;
+                color: lighten(@main-font, 20%);
+                border-radius: 10em; 
+            }
         }
 
         nav {
@@ -76,6 +102,11 @@ header{
             justify-content: space-between;
             align-items: center;
             margin-right: 30px;
+            overflow: hidden;
+
+            &.hidden {
+                display: none;
+            }
 
             a {
                 text-decoration: none;
@@ -126,7 +157,9 @@ header{
     }
 
     .settings-disabled {
-
+        p {
+            color: @dark-font;
+        }
         form {
             color: @dark-font;
             max-width: 600px;
@@ -149,7 +182,7 @@ header{
                 justify-content: space-between;
             }
 
-            p, button, .checkbox-wrapper, .second-line {
+            button, .checkbox-wrapper, .second-line {
                 grid-column-start: 1;
                 grid-column-end: 3;
             }
@@ -157,6 +190,7 @@ header{
             .second-line {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 gap: 15px;
             }
 
@@ -251,7 +285,6 @@ header{
 
     ul li {
         list-style: none;
-        min-width: 500px;
 
         &::before {
             content: url("../img/heart_icon.png");
@@ -339,8 +372,9 @@ header{
     min-height: 100vh;
     .main-grid {
         display: grid;
-        grid-template-columns: 45% 45%;
-        gap: 10%;
+        grid-template-columns: 40% 40%;
+        column-gap: 7%;
+        row-gap: 7vh;
         min-height: 100vh;
 
         .block {
@@ -385,6 +419,8 @@ header{
 
         video {
             position: relative;
+            width: 100%;
+            object-fit: cover;
 
             grid-column-start: 1;
             grid-column-end: 1;
@@ -404,6 +440,7 @@ header{
         }
 
         .fibonacci-block {
+            width: 100%;
             position: relative;
 
             grid-column-start: 2;
@@ -423,7 +460,6 @@ header{
             }
 
             h2 {
-                display: inline-block;
                 color: @dark-font;
                 cursor: pointer;
             }
@@ -453,6 +489,8 @@ footer {
 
         div {
             max-width: 25%;
+            text-align: justify;
+            text-indent: 3em;
         }
     }
 
@@ -529,7 +567,7 @@ footer {
     bottom: 10px;
     right: 10px;
     width: 70px;
-    max-width: 10vw;
+    max-width: 30vw;
     fill: rgb(255, 145, 0);
     animation-name: bounce;
     animation-duration: 40s;
@@ -557,3 +595,69 @@ footer {
     }
 }
 
+
+@media screen and (max-width: 1024px) {
+    .fourth-section .container {
+        grid-template-columns: 95%; 
+    }
+
+    .fourth-section .container video {
+        grid-column-start: 1;
+        grid-column-end: 1;
+
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+
+    .fourth-section .container .fibonacci-block {
+        grid-column-start: 1;
+        grid-column-end: 1;
+
+        grid-row-start: 2;
+        grid-row-end: 2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .third-section .main-grid {
+        grid-template-columns: 95%; 
+    }
+}
+
+@media screen and (max-width: 626px) {
+    #menu-button {
+        display: block !important;
+    }
+
+    nav {
+        width: 100vw;
+        height: 0;
+        flex-direction: column !important;
+
+        a {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .columns {
+        display: flex;
+        flex-direction: column !important;
+        align-items: flex-start;
+    
+        div {
+            margin-top: 20px;
+            max-width: 95% !important;
+        }
+    }
+
+    form {
+        grid-template-columns: 95% !important;
+
+        *{
+            grid-column-start: 1;
+            grid-column-end: 1;
+        }
+    }
+}
