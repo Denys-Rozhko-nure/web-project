@@ -54,6 +54,10 @@ a {
         color: rgb(107, 44, 255);
     }
 
+    &:active {
+        color: rgb(144, 99, 250);
+    }
+
     &[target="_blank"]::after {
         content: " (click to open in a new tab)"
     }
@@ -118,6 +122,10 @@ header{
                 border-radius: 1.5em;
 
                 &:hover {
+                    background-color: #442a1d;
+                }
+
+                &::active {
                     background-color: #442a1d;
                 }
             }
@@ -661,3 +669,5 @@ footer {
         }
     }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");

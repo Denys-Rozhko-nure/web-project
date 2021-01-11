@@ -1,5 +1,3 @@
-import animate from "./animate";
-
 const h3 = document.getElementById("show-modal");
 const p = document.getElementById("fibonacci-result");
 const modal = document.getElementById("select-fibonacci");
